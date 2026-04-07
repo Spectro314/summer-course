@@ -2,6 +2,10 @@
 
 **Topics covered:** dictionaries, sets, string methods (`.lower()`, `.split()`, `.strip()`, `.replace()`, `.join()`, etc.), list methods (`.append()`, `.sort()`, `.count()`, `.remove()`, etc.)
 
+**GitHub Classroom / Autograder note:** When using GitHub Classroom, automated feedback often requires exact function names, parameter lists, and return types. Do not rename functions or change parameter names/order; avoid extra print statements unless the instructions ask for them; prefer returning values over printing when specified. Wrap any demonstration or test code in an `if __name__ == "__main__":` block so autograders can import your functions cleanly.
+
+Your submitted script must be named `Problem Set 4 starter.py` or `Problem Set 4.py` for it to be picked up by the autograder.
+
 ---
 
 ## Problem 1 — Soldier Roster & Dispatch System 🪖
@@ -23,20 +27,35 @@ reports = [
 
 **Your task:**
 
-- Use a `for` loop to parse each report string. Use `.split("|")`, `.strip()`, and `.split(":")` to extract each field.
-- Use `.title()` on names and `.lower()` on status values to normalise the data.
-- Build a dictionary called `roster` where each key is a soldier's name and the value is a dictionary with keys `rank`, `fitness`, and `status`.
-- Use a set to collect all unique ranks in the roster and print them.
-- Build and print a list of all **available** soldiers, sorted alphabetically by name using `.sort()`.
-- Write a function `dispatch(roster, name)` that sets a soldier's status to `"deployed"` if they are currently `"available"`, or prints a message if they are already deployed or not found.
-- Call `dispatch()` on `"Santos"` and `"Kowalski"`, then print the updated roster status for both.
+- Create a function named `process_reports()`, given a list of reports (as above), returns two values:  a dictionary of reports, and all unique ranks.  The reports dictionary looks like the following:
+```python
+{
+    'Santos': {
+        'rank': 'Private',
+        'fitness': 91,
+        'deployed': False
+    },
+    ...
+}
+```
+  - Use a `for` loop to parse each report string. Use `.split("|")`, `.strip()`, and `.split(":")` to extract each field.
+  - Use `.title()` on names, `.upper()` on ranks, and `.lower()` on status values to normalise the data.
+  - Build a dictionary called `roster` where each key is a soldier's name and the value is a dictionary with keys `rank`, `fitness`, and `deployed`.
+  - What data structure naturally collects only unique values?  Use that for the ranks.
+
+- Write another function that displays all availble soldiers called `show_available()   
+  - It should take the reports dictionary as its only input.
+  - The reports should be shown alphabetically by name using `.sort()`.
+
+- Write a function `dispatch(roster, name)` that marks a soldier as deployed (not available), or prints a message if they are already deployed or not found.
+  - How can you validate that your dispatch functions works as intended?
 
 **Expected output (partial):**
 
 ```
 === ROSTER LOADED ===
 6 soldiers on record.
-Ranks on file: {'Private', 'Corporal', 'Sergeant'}
+Ranks on file: {'PRIVATE', 'CORPORAL', 'SERGEANT'}
 
 Available soldiers: ['Briggs', 'Okafor', 'Reyes', 'Santos']
 

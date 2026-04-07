@@ -1,0 +1,45 @@
+name: Autograding
+
+on:
+    push:
+        branches:
+            - main
+            - "**" # grade every branch push so students get feedback on drafts too
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch: # allows manual "Run workflow" from the Actions tab
+
+permissions:
+    checks: write # needed so GitHub Classroom can read the check result
+    actions: read
+    contents: read
+
+jobs:
+    grade:
+        name: Autograding
+        runs-on: ubuntu-latest
+        # Skip this job on the instructor template repo so pushes here don't
+        # trigger grading. Remove this condition (or change the repo name) if
+        # you want grading to run on the template too.
+        if: github.repository != 'AFC-AI2C/summer-course'
+
+        steps:
+            - name: Checkout student code
+              uses: actions/checkout@v4
+
+            - name: Set up Python 3.12
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Install test dependencies
+              run: pip install pytest pytest-github-actions-annotate-failures
+
+            # One step per problem set so GitHub Classroom can score them independently.
+            # Add more steps here as new problem sets are released.
+            - name: "Grade — Problem Set 4"
+              run: >
+                  pytest .github/python_tests/test_problem_set_4.py
+                  -v --tb=short --no-header
+                  --color=yes
