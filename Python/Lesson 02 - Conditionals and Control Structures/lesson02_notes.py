@@ -49,8 +49,29 @@
 # else:
 #     print("F")
 
-user_text = input("Enter your input string:  ")
-if len(user_text) > 10:
-    print("Long string")
-else:
-    print("Short string")
+# user_text = input("Enter your input string:  ")
+# if len(user_text) > 10:
+#     print("Long string")
+# else:
+#     print("Short string")
+
+# user_number = int(input("Enter an even integer number: "))
+# while user_number % 2 == 1:
+#     user_number = int(input("Enter an even integer number: "))
+    
+# print(f"Good job! You entered an even number: {user_number}")
+
+secret_number = 22
+
+user_guess = int(input("Guess integer number: "))
+count_guesses = 1
+while user_guess != secret_number:
+    if user_guess < secret_number:
+        print("Your guess was too Low")
+    else:
+        print("Your guess was too high")
+    user_guess = int(input("Guess an integer number: "))
+    count_guesses += 1
+
+print(f"Congratulations! You guessed the correct number: {user_guess}")
+print(f"It took you {count_guesses} guesses.")
