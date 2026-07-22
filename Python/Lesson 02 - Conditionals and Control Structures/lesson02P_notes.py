@@ -187,7 +187,7 @@ vowels = "aeiouAEIOU"
 
 # print(f"Number of vowels is: {count}")
 
-numbers = [23, 67, 12, 89, 45, 34]
+# numbers = [23, 67, 12, 89, 45, 34]
 
 # maximum_number = numbers[0]
 # for number in numbers:
@@ -262,31 +262,33 @@ numbers = [23, 67, 12, 89, 45, 34]
 
 # print(reversed_list)
 
-num_asterisks = 10
-total_printed = 0
-row = 1
+# num_asterisks = 10
+# total_printed = 0
+# row = 1
 
-while total_printed < num_asterisks:
-    for col in range(row):
-        if total_printed >= num_asterisks:
-            break
-        print("*", end="")
-        total_printed += 1
-    print()  # New line after each row
-    row += 1
+# while total_printed < num_asterisks:
+#     for col in range(row):
+#         if total_printed >= num_asterisks:
+#             break
+#         print("*", end="")
+#         total_printed += 1
+#     print()  # New line after each row
+#     row += 1
 
-# Alternative using flag variable
-num_asterisks = 10
-total_printed = 0
-stop = False
+# # Alternative using flag variable
+# num_asterisks = 10
+# total_printed = 0
+# stop = False
 
-for row in range(1, 100):  # Use a large range
-    if stop:
-        break
-    for col in range(row):
-        print("*", end="")
-        total_printed += 1
-        if total_printed >= num_asterisks:
-            stop = True
-            break
-    print()
+# for row in range(1, 100):  # Use a large range
+#     if stop:
+#         break
+#     for col in range(row):
+#         print("*", end="")
+#         total_printed += 1
+#         if total_printed >= num_asterisks:
+#             stop = True
+#             break
+#     print()
+
+for number in range(1, 101):
