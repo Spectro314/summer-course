@@ -35,4 +35,5 @@
 
 # with open("preclass_problem1_data.txt", "r") as in_file:
 #     print(f"The coordinate is: {sum(sorted(int(x) for x in in_file) [-5:]) / 10}")
-    
+ 
+ 
