@@ -66,5 +66,7 @@ class Spacecraft():
     
 sp1 = Spacecraft("Vostok 1", 250, 1.5)
 sp2 = Spacecraft("Vostok 2", 400, 2.0)
+sp3 = Spacecraft("Apollo 11", 600, 2.5)
 sp1.launch(400)
 sp2.launch(200)
+sp3.launch(300)   
