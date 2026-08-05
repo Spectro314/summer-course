@@ -30,10 +30,19 @@ def dispatch(roster: dict[str, Soldier], name: str) -> None:
     """Dispatch a soldier by name, or print an error if not available."""
     pass
 
+reports = [
+    "SANTOS | Private | Fitness:91 | Status:available",
+    "KOWALSKI | Corporal | Fitness:74 | Status:deployed",
+    "OKAFOR | Sergeant | Fitness:88 | Status:available",
+    "BRIGGS | Private | Fitness:55 | Status:available",
+    "NAKAMURA | Corporal | Fitness:82 | Status:deployed",
+    "REYES | Sergeant | Fitness:79 | Status:available",
+]
 
-def fitness_report(roster: dict[str, Soldier]) -> dict[str, list[str]]:
-    """Return a dict with 'high', 'medium', 'low' fitness bands."""
-    pass
+
+# def fitness_report(roster: dict[str, Soldier]) -> dict[str, list[str]]:
+#     """Return a dict with 'high', 'medium', 'low' fitness bands."""
+#     pass
 
 
 # problem 2
